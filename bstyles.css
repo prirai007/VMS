@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body{
+  padding-top:25px;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+      .navbar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #1e4f81;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      .navbar a {
+        padding: 15px 15px 10px 20px;
+        text-decoration: none;
+        font-size: 22px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+      }
+      .navbar:hover {
+        width: 280px;
+        transition: all 0.5s ease;
+      }
+      .navbar a:hover :not(.closebtn) {
+        color: #6476c3;
+        transition: all 0.5s ease;
+      }
+
+      .navbar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .nav-item {
+        margin-left: 20px;
+      }
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #1e4f81;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+      }
+
+      .openbtn:hover {
+        background-color: #6476c3;
+      }
+
+      #main {
+        transition: margin-left 0.5s;
+        padding: 16px;
+      }
+      @media screen and (max-height: 450px) {
+        .navbar {
+          padding-top: 15px;
+        }
+        .navbar a {
+          font-size: 18px;
+        }
+      }
+#button{
+  display:flex;
+  flex-direction: row;
+  position: relative;
+  padding-left: 424px;
+
+}
+#sub_but{
+  display:flex;
+  flex-direction: row;
+  position: relative;
+  padding-left: 424px;
+
+}
+.CV{
+  background-color: #1e4f81;
+  border-radius: 6px;
+  text-align: center;
+  color:white;
+  width: 100px;
+  padding:30px;
+
+}
+
+li{
+  align-items: initial;
+}
+table {
+  border: 0px;
+  padding-left:25%;
+  
+  width: 100%;
+}
+th {
+  padding: 30px;
+  font-size:35px;
+  color:white;
+}
+th,td {
+  background-color: #1e4f81;
+  border-radius: 6px;
+  
+  color:white;
+  width: 100px;
+  padding:70px;
+  
+}
+.button {
+  margin:20px;
+  background-color:#1e4f81;
+  border:0px;color:white;
+  font-size: 30px;
+}
+
+
+
+  

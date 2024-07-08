@@ -1,0 +1,119 @@
+#mySidebar1.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  height: 110vh;
+  background-color: #1e4f81;
+  width: 100px;
+  overflow-x: hidden;
+  transition: width 0.5s linear;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+#mySidebar1.navbar i.fas {
+  color: white;
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 3px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#mySidebar1.navbar a {
+  position: relative;
+  top: 25px;
+  color: rgb(248, 248, 248);
+  font-size: 20px;
+  display: table;
+  width: 300px;
+  padding: 10px;
+}
+
+#mySidebar1.navbar span.nav-item {
+  position: relative;
+  top: 5px;
+  margin-left: 20px;
+  color: white;
+}
+
+#mySidebar1.navbar:hover {
+  width: 280px;
+  transition: all 0.5s ease;
+}
+
+#mySidebar1.navbar a:hover {
+  background-color: #6476c3;
+  transition: all 0.5s ease;
+}
+
+#mySidebar.navbar {
+  /* Styles for navbar 2 (for smartphones) */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #1e4f81;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+#mySidebar.navbar a {
+  padding: 15px 15px 10px 20px;
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+#mySidebar.navbar:hover {
+  width: 280px;
+  transition: all 0.5s ease;
+}
+
+#mySidebar.navbar a:hover:not(.closebtn) {
+  color: #6476c3;
+  transition: all 0.5s ease;
+}
+
+#mySidebar.navbar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #1e4f81;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #6476c3;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .navbar {
+    padding-top: 15px;
+  }
+
+  .navbar a {
+    font-size: 18px;
+  }
+}
