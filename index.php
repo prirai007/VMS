@@ -1,10 +1,10 @@
-
-
 <!DOCTYPE html>
 <html>
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
+    header("Cross-Origin-Opener-Policy: same-origin");
+    header("Cross-Origin-Embedder-Policy: require-corp");
 ?>
 
 <head>
@@ -12,7 +12,7 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Login page</title>
-    <meta name="google-signin-client_id" content="1082461038924-h9bjeg6n5g7c78ldlfnq13r2j6dcvjbp.apps.googleusercontent.com.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="1082461038924-h9bjeg6n5g7c78ldlfnq13r2j6dcvjbp.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
         function onSignIn(googleUser) {
@@ -47,7 +47,6 @@
         <h3 class="title">Login to Cast your vote</h3>
     </header>
 
-    <!-- container div -->
     <div class="container">
         <div class="form-section">
             <div class="g-signin2" data-onsuccess="onSignIn"></div>

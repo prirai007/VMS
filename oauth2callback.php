@@ -5,14 +5,18 @@ session_start();
 
 $client = new Google_Client();
 $client->setAuthConfig('client.json');
-$client->setRedirectUri('http://localhost/oauth2callback.php'); // Ensure this matches your Google Cloud Console setting
+$client->setRedirectUri('http://localhost:4000/oauth2callback.php'); // Ensure this matches your Google Cloud Console setting
 $client->addScope(Google_Service_Oauth2::USERINFO_EMAIL);
 $client->addScope(Google_Service_Oauth2::USERINFO_PROFILE);
 
 // Authenticate the code
 if (isset($_GET['code'])) {
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-    $_SESSION['access_token'] = $token;
+    if (isset($token['error'])) {
+        echo 'Authentication Error: ' . htmlspecialchars($token['error']);
+        exit;
+    }
+    $client->setAccessToken($token['access_token']);
 
     // Get user info
     $oauth2 = new Google_Service_Oauth2($client);

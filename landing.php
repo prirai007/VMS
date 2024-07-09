@@ -1,3 +1,8 @@
+<?php
+header("Cross-Origin-Opener-Policy: same-origin");
+header("Cross-Origin-Embedder-Policy: require-corp");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +51,7 @@
       <ul>
         <li>
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
-            <span>×</span>
+            <span>x</span>
         </li>
         <li>
           <a href="landing.php">
