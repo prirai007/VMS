@@ -3,8 +3,6 @@
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    header("Cross-Origin-Opener-Policy: same-origin");
-    header("Cross-Origin-Embedder-Policy: require-corp");
 ?>
 
 <head>
