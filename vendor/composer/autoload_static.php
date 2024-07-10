@@ -32,6 +32,10 @@ class ComposerStaticInit6bdd66e37da607e3ed66f13f9658733a
         array (
             'Monolog\\' => 8,
         ),
+        'L' => 
+        array (
+            'League\\OAuth2\\Client\\' => 21,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -76,6 +80,10 @@ class ComposerStaticInit6bdd66e37da607e3ed66f13f9658733a
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'League\\OAuth2\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

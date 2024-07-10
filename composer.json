@@ -1,5 +1,6 @@
 {
     "require": {
-        "google/apiclient": "^2.16"
+        "google/apiclient": "^2.16",
+        "league/oauth2-client": "^2.7"
     }
 }

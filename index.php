@@ -12,15 +12,13 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Login page</title>
-    <meta name="google-signin-client_id" content="1082461038924-h9bjeg6n5g7c78ldlfnq13r2j6dcvjbp.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            var email = profile.getEmail();
+        function handleCredentialResponse(response) {
+            const data = JSON.parse(atob(response.credential.split('.')[1]));
+            const email = data.email;
 
             if (email.endsWith('@nitc.ac.in')) {
-                var id_token = googleUser.getAuthResponse().id_token;
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', 'oauth_login.php');
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -31,11 +29,22 @@
                         alert('Login failed. Please try again.');
                     }
                 };
-                xhr.send('idtoken=' + id_token);
+                xhr.send('credential=' + response.credential);
             } else {
                 alert('You must use an @nitc.ac.in email address.');
-                gapi.auth2.getAuthInstance().signOut();
             }
+        }
+
+        window.onload = function () {
+            google.accounts.id.initialize({
+                client_id: '1082461038924-h9bjeg6n5g7c78ldlfnq13r2j6dcvjbp.apps.googleusercontent.com',
+                callback: handleCredentialResponse
+            });
+            google.accounts.id.renderButton(
+                document.getElementById('buttonDiv'),
+                { theme: 'outline', size: 'large' }  // customization attributes
+            );
+            google.accounts.id.prompt(); // also display the One Tap dialog
         }
     </script>
 </head>
@@ -49,7 +58,7 @@
 
     <div class="container">
         <div class="form-section">
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <div id="buttonDiv"></div>
             <div class="foot"> For any queries contact:<br>
                 <a href="mailto:svms1416@gmail.com">svms1416@gmail.com</a>
             </div>
