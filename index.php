@@ -15,27 +15,20 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
         function handleCredentialResponse(response) {
-            const data = JSON.parse(atob(response.credential.split('.')[1]));
-            const email = data.email;
-
-            if (email.endsWith('@nitc.ac.in')) {
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'oauth_login.php');
-                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                xhr.onload = function() {
-                    if (xhr.responseText == 'success') {
-                        window.location.href = 'landing.php';
-                    } else {
-                        alert('Login failed. Please try again.');
-                    }
-                };
-                xhr.send('credential=' + response.credential);
-            } else {
-                alert('You must use an @nitc.ac.in email address.');
-            }
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'oauth2callback.php');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function() {
+                if (xhr.responseText === 'success') {
+                    window.location.href = 'landing.php';
+                } else {
+                    alert('Login failed. Please try again.');
+                }
+            };
+            xhr.send('credential=' + response.credential);
         }
 
-        window.onload = function () {
+        window.onload = function() {
             google.accounts.id.initialize({
                 client_id: '1082461038924-h9bjeg6n5g7c78ldlfnq13r2j6dcvjbp.apps.googleusercontent.com',
                 callback: handleCredentialResponse
@@ -44,8 +37,8 @@
                 document.getElementById('buttonDiv'),
                 { theme: 'outline', size: 'large' }  // customization attributes
             );
-            google.accounts.id.prompt(); // also display the One Tap dialog
-        }
+            google.accounts.id.prompt(); // display the One Tap prompt
+        };
     </script>
 </head>
 

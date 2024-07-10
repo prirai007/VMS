@@ -7,7 +7,7 @@ session_start();
 
 $client = new Google_Client(['client_id' => '1082461038924-h9bjeg6n5g7c78ldlfnq13r2j6dcvjbp.apps.googleusercontent.com']);
 
-$id_token = $_POST['credential']; // Use 'credential' for GIS ID token
+$id_token = $_POST['credential'];
 $payload = $client->verifyIdToken($id_token);
 
 if ($payload) {
@@ -15,7 +15,8 @@ if ($payload) {
     if (strpos($email, '@nitc.ac.in') !== false) {
         $_SESSION['user_email'] = $email;
         $_SESSION['user_name'] = $payload['name'];
-        echo 'success';
+        header('Location: landing.php');
+        exit;
     } else {
         echo 'Invalid email domain';
     }
