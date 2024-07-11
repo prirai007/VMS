@@ -13,6 +13,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
         function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'oauth2callback.php');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
