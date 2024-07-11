@@ -25,9 +25,10 @@ try {
     $id_token = $_POST['credential'];
 	$decoded_credentials = decode_google_auth_credential($id_token);
 	$email = $decoded_credentials->email;
+	$name = $decoded_credentials->name;
     if (strpos($email, '@nitc.ac.in') !== false) {
         $_SESSION['user_email'] = $email;
-        $_SESSION['user_name'] = $payload['name'];
+        $_SESSION['user_name'] = $name;
         echo 'success';
     } else {
         echo 'Invalid email domain';
