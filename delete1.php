@@ -1,3 +1,7 @@
+<?php
+header("Cross-Origin-Opener-Policy: same-origin");
+header("Cross-Origin-Embedder-Policy: require-corp");
+?>
 
 <?php
 ini_set('display_errors', 1);

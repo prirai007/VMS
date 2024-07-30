@@ -1,4 +1,9 @@
 <?php
+header("Cross-Origin-Opener-Policy: same-origin");
+header("Cross-Origin-Embedder-Policy: require-corp");
+?>
+
+<?php
     session_start();
 
     // Check if the user is not logged in

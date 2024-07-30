@@ -1,6 +1,10 @@
+<?php
+header("Cross-Origin-Opener-Policy: same-origin");
+header("Cross-Origin-Embedder-Policy: require-corp");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-//frontend for reg. for br
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,10 +117,10 @@
 
           <label for="Batch" class="inp1">Batch:</label>
           <select name="Batch" id="E2" style="border:1px solid black;border-radius:10px;margin-left:160px;">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
+            <option value="A">B21</option>
+            <option value="B">B22</option>
+            <option value="C">B23</option>
+            <option value="D">B24</option>
           </select><br><br>
         </li>
         <li>

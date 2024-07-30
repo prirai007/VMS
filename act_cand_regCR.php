@@ -1,5 +1,7 @@
 
 <?php
+header("Cross-Origin-Opener-Policy: same-origin");
+header("Cross-Origin-Embedder-Policy: require-corp");
 session_start();
 include('dbconfig.php');
 include('$include.lib');

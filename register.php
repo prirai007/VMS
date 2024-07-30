@@ -1,4 +1,9 @@
 <?php
+header("Cross-Origin-Opener-Policy: same-origin");
+header("Cross-Origin-Embedder-Policy: require-corp");
+?>
+
+<?php
 session_start();
 require_once 'database_connection.php'; // Update with your database connection script
 

@@ -13,13 +13,14 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
         function handleCredentialResponse(response) {
-            console.log("Encoded JWT ID token: " + response.credential);
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'oauth2callback.php');
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
-                if (xhr.responseText === 'success') {
+                if (xhr.responseText === 'user') {
                     window.location.href = 'landing.php';
+                } else if (xhr.responseText === 'admin') {
+                    window.location.href = 'admin_landing.php';
                 } else {
                     alert('Login failed. Please try again.');
                 }
@@ -34,9 +35,9 @@
             });
             google.accounts.id.renderButton(
                 document.getElementById('buttonDiv'),
-                { theme: 'outline', size: 'large' }  // customization attributes
+                { theme: 'outline', size: 'large' }
             );
-            google.accounts.id.prompt(); // display the One Tap prompt
+            google.accounts.id.prompt();
         };
     </script>
 </head>
