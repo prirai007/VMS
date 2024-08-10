@@ -18,7 +18,7 @@ if (isset($_POST['save_opt'])) {
   $Email_id = $_POST['Email_id'];
   $Batch = $_POST['Batch'];
   $dept = $_POST['Department'];
-  $branch = $_POST['Branch'];
+//  $branch = $_POST['Branch'];
   $pdf = $_FILES['pdf']['name'];
   $Image = $_FILES["upload_img"]["name"];
 
@@ -45,11 +45,11 @@ if (isset($_POST['save_opt'])) {
     $folder = "uploads/" . $Image;
     move_uploaded_file($tempfile, $folder);
 
-    $stmt = $conn->prepare("INSERT INTO candidate_database (roll_number, name, email, batch, department, branch, elections, category, pdf, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO candidate_database (roll_number, name, email, batch, department, elections, category, pdf, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     if (!$stmt) {
       die("Error in SQL query: " . $conn->error);
     } else {
-      $stmt->bind_param("ssssssssss", $Roll_no, $Name, $Email_id, $Batch, $dept, $branch, $Elections, $Category, $pdf, $Image);
+      $stmt->bind_param("sssssssss", $Roll_no, $Name, $Email_id, $Batch, $dept, $Elections, $Category, $pdf, $Image);
       $result = $stmt->execute();
       if ($result) {
         $_SESSION['success_message'] = "Registered successfully.";

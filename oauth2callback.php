@@ -30,6 +30,8 @@ try {
     $admin_email = 'vmsa592@gmail.com';
     if ($email === $admin_email) {
         $_SESSION['admin'] = $email;
+	$_SESSION['roll_num'] = 'B22ijwd';
+	$_SESSION['batchu'] = 'B18';
         echo 'admin';
     } else if (strpos($email, '@nitc.ac.in') !== false) {
         // Extract roll number, batch, and department
