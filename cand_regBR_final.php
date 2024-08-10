@@ -91,8 +91,8 @@ header("Cross-Origin-Embedder-Policy: require-corp");
           </select><br><br>
         </li>
         <li>
-          <label for="categories" class="inp1">Name of Category:</label>
-          <select name="Catogory" id="E2" style="border:1px solid black;border-radius:10px;margin-left:40px;">
+          <label for="Category" class="inp1">Name of Category:</label>
+          <select name="Category" id="E2" style="border:1px solid black;border-radius:10px;margin-left:40px;">
             <option value="BR Category">BR Category</option>
 
 
